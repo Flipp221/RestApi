@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestApi.Models
+namespace RestApi
 {
     public static class Constants
     {

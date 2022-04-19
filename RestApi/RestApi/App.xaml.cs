@@ -1,4 +1,5 @@
 ﻿using RestApi.IRest;
+using RestApi.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,9 +12,8 @@ namespace RestApi
         public App()
         {
             InitializeComponent();
-
             TodoManager = new TodoItemManager(new RestService());
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new ToDoEntry());
         }
 
         protected override void OnStart()

@@ -14,7 +14,6 @@ namespace RestApi.IRest
         HttpClient client;
         JsonSerializerOptions serializerOptions;
 
-        public List<TodoItem> Enties { get; private set; }
         public  CountModel Count { get; private set; }
 
         public RestService()
@@ -29,6 +28,7 @@ namespace RestApi.IRest
 
         public async Task<List<TodoItem>> RefreshDataAsync()
         {
+            Count = new CountModel();
             Uri uri = new Uri(string.Format(Constants.RestUrl, string.Empty));
             try
             {

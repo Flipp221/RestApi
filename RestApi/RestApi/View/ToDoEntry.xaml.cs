@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestApi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,17 @@ namespace RestApi.View
         public ToDoEntry()
         {
             InitializeComponent();
-           
+
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-
             superlist.ItemsSource = await App.TodoManager.GetTasksAsync();
-            
+        }
+
+        private void listView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Navigation.PushAsync(new FulInfo() { BindingContext = e.Item as TodoItem});
         }
     }
 }

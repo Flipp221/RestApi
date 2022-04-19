@@ -6,9 +6,11 @@
     <ListView x:Name="superlist">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <Label Text="{Binding API}" VerticalOptions="Center">
-
+                <ViewCell>
+                <Label Text="{Binding API}">
+                    
                 </Label>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

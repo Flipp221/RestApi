@@ -36,7 +36,7 @@ namespace RestApi.IRest
                 if (response.IsSuccessStatusCode)
                 {
                     string content = await response.Content.ReadAsStringAsync();
-                    Count = JsonSerializer.Deserialize<CountModel>(content, serializerOptions);
+                    Count = JsonSerializer.Deserialize<CountModel>(content);
                 }
             }
             catch (Exception ex)
